@@ -1,4 +1,5 @@
 import numpy
+import matplotlib.pyplot as plt
 
 %% Informação conhecida
 le=0.3; %Comprimento do evaporador [m]
@@ -65,6 +66,8 @@ rv=r/mm; %Constante do vapor
 epsilon=1-((S*pi*N*d_f)/(4));
 k=(((d_f)^2)*(epsilon^3))/(122*((1-epsilon)^2)); %Permeabilidade
 a_w=(pi/4)*((d_ext-2*t)^2-(2*r_v)^2); %Area do liquido
+
+temperature = numpy.arange(minimal_operation_temperature, maximal_operation_temperature, 5)
  
 # Operations limits
 
@@ -142,7 +145,7 @@ for i in range(len(temperature)):
     max_drag_heat = area_steam * enthalpy_evaporation * (sigma*rho_steam/(2*radius_hidraulic))**(1/2)
     # q_em(i)=((a_v*hlv(i))*(((ts(i)*rho_v(i))/(2*r_h_w))^(0.5)));
 
-%% Limite viscoso
+# Viscous limit
 for i in range(len(temperature)):
     enthalpy_liquid = PropsSI("H", "T", temperature[i], "Q", 0, fluid)
     enthalpy_steam = PropsSI("H", "T", temperature[i], "Q", 1, fluid)
@@ -155,17 +158,19 @@ for i in range(len(temperature)):
     # q_v(i)=a_v*((((((2*r_v)^2)*hlv(i)*rho_v(i)*p0(i))/(64*nu_v(i)*lef))));
 
 %% Plot limites de operacao
-figure(4)
-box on
-% semilogy(tm,q_cap,'-rs','MarkerEdgeColor',[0 0 0],'MarkerSize',5,'MarkerFaceColor',[1 1 1])%Viscoso
-semilogy(tm,q_capf,'-ks','MarkerEdgeColor',[0 0 0],'MarkerSize',5,'MarkerFaceColor',[0 0 0])%Capilar
-hold on
-semilogy(tm,q_s,'-ks','MarkerEdgeColor',[0 0 0],'MarkerSize',5,'MarkerFaceColor',[0.5 0.5 0.5])%Sonico
-semilogy(tm,q_e,'-ks','MarkerEdgeColor',[0 0 0],'MarkerSize',5,'MarkerFaceColor',[1 1 1])%Ebilucao
-semilogy(tm,q_em,'-ko','MarkerEdgeColor',[0 0 0],'MarkerSize',5,'MarkerFaceColor',[1 1 1])%Arrastro
-semilogy(tm,q_v,'-k^','MarkerEdgeColor',[0 0 0],'MarkerSize',5,'MarkerFaceColor',[1 1 1])%Viscoso
-set(0,'DefaultAxesFontName', 'Times')
-grid on
-xlabel('Temperatura [\circC]','FontSize',12,'FontName','Times')
-ylabel('Q [W]','FontSize',12,'FontName','Times')
-legend('Capilar','Sônico','Ebulição','Arrasto','Viscoso','Location','NorthWest');
+# plot
+fig = plt.figure(1)
+ax = fig.add_subplot(1,1,1)
+# semilogy(tm,max_viscous_heat,'-rs','MarkerEdgeColor',[0 0 0],'MarkerSize',5,'MarkerFaceColor',[1 1 1])%Viscoso
+ax.semilogy(temperature,max_capilar_heat,'-ks','MarkerEdgeColor',[0 0 0],'MarkerSize',5,'MarkerFaceColor',[0 0 0])
+ax.semilogy(temperature,max_sonic_heat,'-ks','MarkerEdgeColor',[0 0 0],'MarkerSize',5,'MarkerFaceColor',[0.5 0.5 0.5])
+ax.semilogy(temperature,max_boinling_heat,'-ks','MarkerEdgeColor',[0 0 0],'MarkerSize',5,'MarkerFaceColor',[1 1 1])
+ax.semilogy(temperature,max_drag_heat,'-ko','MarkerEdgeColor',[0 0 0],'MarkerSize',5,'MarkerFaceColor',[1 1 1])
+ax.semilogy(temperature,max_viscous_heat,'-k^','MarkerEdgeColor',[0 0 0],'MarkerSize',5,'MarkerFaceColor',[1 1 1])
+# set(0,'DefaultAxesFontName', 'Times')
+ax.grid(True)
+ax.set_xlabel('Temperatura [\circC]','FontSize',12,'FontName','Times')
+ax.set_ylabel('Q [W]','FontSize',12,'FontName','Times')
+ax.set_legend('Capilar','Sonico','Ebulicao','Arrasto','Viscoso','Location','NorthWest')
+
+plt.show()
