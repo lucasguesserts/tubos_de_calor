@@ -12,7 +12,10 @@ rho_environment = PropsSI('D', 'T', temperature_environment, 'P', pressure_envir
 volume_environment = mass_total / rho_environment
 volume_environment_in_ml = volume_environment * 1E+6
 
-print("{} = {} [m3] = {} [ml]".format("Volume necessario", volume_environment, volume_environment_in_ml))
-print("{} = {} [m3] = {} [ml]".format("110 % do Volume necessario", 1.1*volume_environment, 1.1*volume_environment_in_ml))
-print("{} {} {}".format("Volume necessario usando o volume do meio poroso:", 1E+6*volume_liquid, "[ml]"))
-print("{} {} {}".format("Volume necessario usando 110%% do volume do meio poroso:", 1E+6*1.1*volume_liquid, "[ml]"))
+def print_fluid_quantity(message, quantity_in_ml):
+    print("{:45} = {:4.3} [ml]".format(message, quantity_in_ml))
+
+print_fluid_quantity("Volume necessario", volume_environment_in_ml)
+print_fluid_quantity("110% do Volume necessario", 1.1*volume_environment_in_ml)
+print_fluid_quantity("Volume necessario no meio poroso:", 1E+6*volume_liquid)
+print_fluid_quantity("110% do volume necessario no meio poroso:", 1E+6*1.1*volume_liquid)
