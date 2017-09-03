@@ -1,7 +1,7 @@
 import numpy
 
 # pipe geometric charactics
-pipe_length = 0.5 # [m]
+pipe_length = 0.9 # [m]
 pipe_external_diameter = 22.04E-3 # [m]
 pipe_thickness = 0.9E-3 # [m]
 
@@ -11,9 +11,9 @@ mesh_opening_length = 102.09E-6 # [m]
 
 # heat pipe construction characteristics
 fluid = "Ethanol"
-length_evaporator = 0.2 # [m]
+length_evaporator = 0.3 # [m]
 length_adiabatic = 0.1 # [m]
-length_condenser = 0.2 # [m]
+length_condenser = 0.5 # [m]
 # number_of_mesh_turns = 5.0
 number_of_mesh_layers = 5.0
 crimp_factor = 1.0
@@ -31,10 +31,12 @@ epsilon = 1 - (crimp_factor * numpy.pi * mesh_number * mesh_wire_diameter / 4)
 
 pipe_internal_diameter = pipe_external_diameter - 2*pipe_thickness
 pipe_internal_radius = pipe_internal_diameter/2
+pipe_effective_length = (length_condenser + length_evaporator)/2 + length_adiabatic
 radius_steam = pipe_internal_radius - (crimp_factor * number_of_mesh_layers * mesh_wire_diameter)
 diameter_steam = 2*radius_steam
 area_liquid = numpy.pi * (pipe_internal_radius**2 - radius_steam**2)
 area_steam = numpy.pi * radius_steam**2
+perimeter_steam = 2 * numpy.pi * radius_steam
 volume_liquid = area_liquid * pipe_length * epsilon
 volume_steam = area_steam * pipe_length
 
