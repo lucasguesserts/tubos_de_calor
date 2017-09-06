@@ -9,7 +9,7 @@ pipe_thickness = 0.9E-3 # [m]
 pipe_inclination = 0 # rad
 
 # mesh geometric characteristics
-mesh_wire_diameter = 28.06E-4 # [m]
+mesh_wire_diameter = 28.06E-6 # [m]
 mesh_opening_length = 102.09E-6 # [m]
 
 # heat pipe construction characteristics
