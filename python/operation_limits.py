@@ -56,7 +56,7 @@ for i in numpy.arange(len(temperature)):
     conductivity_liquid = PropsSI("L", "T", temperature[i], "Q", 0, fluid)
     conductivity_steam = PropsSI("L", "T", temperature[i], "Q", 1, fluid)
     kl = conductivity_liquid
-    kw = 237
+    kw = pipe_thermal_conduction
     conductivity_effective = kl * ((kl+kw)-(1-epsilon)*(kl-kw)) / ( (kl+kw)+(1-epsilon)*(kl-kw) )
     sigma = PropsSI("I", "T", temperature[i], "Q", 0, fluid)
     nucleation_critical_radius = 2.54E-7 # 2.54E-7 < nucleation_critical_radius < 2.54E-5 [m]

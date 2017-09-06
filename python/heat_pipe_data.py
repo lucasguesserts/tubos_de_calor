@@ -7,6 +7,8 @@ pipe_length = 0.5 # [m]
 pipe_external_diameter = 22.04E-3 # [m]
 pipe_thickness = 0.9E-3 # [m]
 pipe_inclination = 0 # rad
+pipe_thermal_conduction = 237 # [W/(m*K]
+kw = 237
 
 # mesh geometric characteristics
 mesh_wire_diameter = 28.06E-6 # [m]
