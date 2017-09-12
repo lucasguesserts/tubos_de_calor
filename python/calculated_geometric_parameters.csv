@@ -1,0 +1,14 @@
+mesh_number,7683.44,m^(-1)
+epsilon,0.83067,1
+mesh_permeability,1.29013e-10,m^2
+mesh_effective_capilar_radius,6.5075e-05,m
+pipe_internal_diameter,0.02024,m
+pipe_internal_radius,0.01012,m
+pipe_effective_length,0.3,m
+radius_steam,0.0099797,m
+diameter_steam,0.0199594,m
+area_liquid,8.85925e-06,m^2
+area_steam,0.000312885,m^2
+perimeter_steam,0.0627043,m
+volume_liquid,3.67956e-06,m^3
+volume_steam,0.000156443,m^3

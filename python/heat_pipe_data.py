@@ -50,20 +50,26 @@ volume_steam = area_steam * pipe_length
 if pipe_length != (length_evaporator+length_adiabatic+length_condenser):
     raise ValueError("pipe length incompatible with evaporator+adiabatic+condenser lengths.")
 
-def summary():
-    print("{},{:g},{}".format("mesh_number", mesh_number, "m^(-1)"))
-    print("{},{:g},{}".format("epsilon", epsilon, "1"))
-    print("{},{:g},{}".format("mesh_permeability", mesh_permeability, "m^2"))
-    print("{},{:g},{}".format("mesh_effective_capilar_radius", mesh_effective_capilar_radius, "m"))
-    print("{},{:g},{}".format("pipe_internal_diameter", pipe_internal_diameter, "m"))
-    print("{},{:g},{}".format("pipe_internal_radius", pipe_internal_radius, "m"))
-    print("{},{:g},{}".format("pipe_effective_length", pipe_effective_length, "m"))
-    print("{},{:g},{}".format("radius_steam", radius_steam, "m"))
-    print("{},{:g},{}".format("diameter_steam", diameter_steam, "m"))
-    print("{},{:g},{}".format("area_liquid", area_liquid, "m^2"))
-    print("{},{:g},{}".format("area_steam", area_steam, "m^2"))
-    print("{},{:g},{}".format("perimeter_steam", perimeter_steam, "m"))
-    print("{},{:g},{}".format("volume_liquid", volume_liquid, "m^3"))
-    print("{},{:g},{}".format("volume_steam", volume_steam, "m^3"))
+if __name__ == "__main__":
 
-summary()
+    csvFile = open("calculated_geometric_parameters.csv","w")
+
+    def summary():
+        csvFile.write("{},{:g},{}\n".format("mesh_number", mesh_number, "m^(-1)"))
+        csvFile.write("{},{:g},{}\n".format("epsilon", epsilon, "1"))
+        csvFile.write("{},{:g},{}\n".format("mesh_permeability", mesh_permeability, "m^2"))
+        csvFile.write("{},{:g},{}\n".format("mesh_effective_capilar_radius", mesh_effective_capilar_radius, "m"))
+        csvFile.write("{},{:g},{}\n".format("pipe_internal_diameter", pipe_internal_diameter, "m"))
+        csvFile.write("{},{:g},{}\n".format("pipe_internal_radius", pipe_internal_radius, "m"))
+        csvFile.write("{},{:g},{}\n".format("pipe_effective_length", pipe_effective_length, "m"))
+        csvFile.write("{},{:g},{}\n".format("radius_steam", radius_steam, "m"))
+        csvFile.write("{},{:g},{}\n".format("diameter_steam", diameter_steam, "m"))
+        csvFile.write("{},{:g},{}\n".format("area_liquid", area_liquid, "m^2"))
+        csvFile.write("{},{:g},{}\n".format("area_steam", area_steam, "m^2"))
+        csvFile.write("{},{:g},{}\n".format("perimeter_steam", perimeter_steam, "m"))
+        csvFile.write("{},{:g},{}\n".format("volume_liquid", volume_liquid, "m^3"))
+        csvFile.write("{},{:g},{}\n".format("volume_steam", volume_steam, "m^3"))
+
+    summary()
+
+    csvFile.close()
