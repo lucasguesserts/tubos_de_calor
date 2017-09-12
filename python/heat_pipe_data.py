@@ -24,6 +24,7 @@ crimp_factor = 1.0
 minimal_operation_temperature = 40 + 273.15 # [K]
 maximum_operation_temperature = 70 + 273.15 # [K]
 temperature_operation = 40 + 273.15 # [K]
+heat_transference = 80 # [W]
 
 # Environment conditions
 temperature_environment = 25 + 273.15 # [K]
@@ -35,16 +36,22 @@ epsilon = 1 - (crimp_factor * numpy.pi * mesh_number * mesh_wire_diameter / 4)
 mesh_permeability = mesh_wire_diameter**2 * epsilon**3 / (122 * (1-epsilon)**2)
 mesh_effective_capilar_radius = 1/(2*mesh_number)
 
+pipe_external_radius = pipe_external_diameter/2
 pipe_internal_diameter = pipe_external_diameter - 2*pipe_thickness
 pipe_internal_radius = pipe_internal_diameter/2
 pipe_effective_length = (length_condenser + length_evaporator)/2 + length_adiabatic
+
 radius_steam = pipe_internal_radius - (crimp_factor * number_of_mesh_layers * mesh_wire_diameter)
 diameter_steam = 2*radius_steam
+area_solid = numpy.pi*(pipe_external_radius**2 - pipe_internal_radius**2)
 area_liquid = numpy.pi * (pipe_internal_radius**2 - radius_steam**2)
 area_steam = numpy.pi * radius_steam**2
 perimeter_steam = 2 * numpy.pi * radius_steam
 volume_liquid = area_liquid * pipe_length * epsilon
 volume_steam = area_steam * pipe_length
+
+area_evaporator = numpy.pi*pipe_external_diameter*length_evaporator
+area_condenser = numpy.pi*pipe_external_diameter*length_condenser
 
 # verifications
 if pipe_length != (length_evaporator+length_adiabatic+length_condenser):
@@ -69,6 +76,8 @@ if __name__ == "__main__":
         csvFile.write("{},{:g},{}\n".format("perimeter_steam", perimeter_steam, "m"))
         csvFile.write("{},{:g},{}\n".format("volume_liquid", volume_liquid, "m^3"))
         csvFile.write("{},{:g},{}\n".format("volume_steam", volume_steam, "m^3"))
+        csvFile.write("{},{:g},{}\n".format("area_evaporator", area_evaporator, "m^2"))
+        csvFile.write("{},{:g},{}\n".format("area_evaporator", area_evaporator, "m^2"))
 
     summary()
 
