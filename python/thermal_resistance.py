@@ -46,27 +46,27 @@ Rt = R_ext_e + (1/Rp + 1/Rw + 1/Rv)**(-1) + R_ext_c
 
 if __name__ == "__main__":
 
+    thermal_resistance_unit = "K/W"
     csvFile = open("thermal_resistances.csv","w")
+    dataMatrix = [
+        ["Rpe", Rpe, thermal_resistance_unit],
+        ["Rpc", Rpc, thermal_resistance_unit],
+        ["Rwe", Rwe, thermal_resistance_unit],
+        ["Rwc", Rwc, thermal_resistance_unit],
+        ["Rie", Rie, thermal_resistance_unit],
+        ["Ric", Ric, thermal_resistance_unit],
+        ["Rva", Rva, thermal_resistance_unit],
+        ["Rpa", Rpa, thermal_resistance_unit],
+        ["Rwa", Rwa, thermal_resistance_unit],
+        ["Rwa", Rwa, thermal_resistance_unit],
+        ["Rp", Rp, thermal_resistance_unit],
+        ["Rw", Rw, thermal_resistance_unit],
+        ["Rv", Rv, thermal_resistance_unit],
+        ["Rt", Rt, thermal_resistance_unit],
+        ["R_ext_e", R_ext_e, thermal_resistance_unit],
+        ["R_ext_c", R_ext_c, thermal_resistance_unit]
+    ]
 
-    def summary():
-        thermal_resistance_unit = "K/W"
-        csvFile.write("{},{:g},{}\n".format("Rpe", Rpe, thermal_resistance_unit))
-        csvFile.write("{},{:g},{}\n".format("Rpc", Rpc, thermal_resistance_unit))
-        csvFile.write("{},{:g},{}\n".format("Rwe", Rwe, thermal_resistance_unit))
-        csvFile.write("{},{:g},{}\n".format("Rwc", Rwc, thermal_resistance_unit))
-        csvFile.write("{},{:g},{}\n".format("Rie", Rie, thermal_resistance_unit))
-        csvFile.write("{},{:g},{}\n".format("Ric", Ric, thermal_resistance_unit))
-        csvFile.write("{},{:g},{}\n".format("Rva", Rva, thermal_resistance_unit))
-        csvFile.write("{},{:g},{}\n".format("Rpa", Rpa, thermal_resistance_unit))
-        csvFile.write("{},{:g},{}\n".format("Rwa", Rwa, thermal_resistance_unit))
-        csvFile.write("{},{:g},{}\n".format("Rwa", Rwa, thermal_resistance_unit))
-        csvFile.write("{},{:g},{}\n".format("Rp", Rp, thermal_resistance_unit))
-        csvFile.write("{},{:g},{}\n".format("Rw", Rw, thermal_resistance_unit))
-        csvFile.write("{},{:g},{}\n".format("Rv", Rv, thermal_resistance_unit))
-        csvFile.write("{},{:g},{}\n".format("Rt", Rt, thermal_resistance_unit))
-        csvFile.write("{},{:g},{}\n".format("R_ext_e", R_ext_e, thermal_resistance_unit))
-        csvFile.write("{},{:g},{}\n".format("R_ext_c", R_ext_c, thermal_resistance_unit))
-
-    summary()
+    summary(csvFile, dataMatrix)
 
     csvFile.close()

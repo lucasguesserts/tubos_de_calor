@@ -70,23 +70,23 @@ if __name__ == "__main__":
     filename = "calculated_geometric_parameters.csv"
     csvFile = open(filename,"w")
     matrixExportToCSV = [
-                ["mesh_number", mesh_number, "m^(-1)"],
-                ["epsilon", epsilon, "1"],
-                ["mesh_permeability", mesh_permeability, "m^2"],
-                ["mesh_effective_capilar_radius", mesh_effective_capilar_radius, "m"],
-                ["pipe_internal_diameter", pipe_internal_diameter, "m"],
-                ["pipe_internal_radius", pipe_internal_radius, "m"],
-                ["pipe_effective_length", pipe_effective_length, "m"],
-                ["radius_steam", radius_steam, "m"],
-                ["diameter_steam", diameter_steam, "m"],
-                ["area_liquid", area_liquid, "m^2"],
-                ["area_steam", area_steam, "m^2"],
-                ["perimeter_steam", perimeter_steam, "m"],
-                ["volume_liquid", volume_liquid, "m^3"],
-                ["volume_steam", volume_steam, "m^3"],
-                ["area_evaporator", area_evaporator, "m^2"],
-                ["area_evaporator", area_evaporator, "m^2"]
-            ]
+        ["mesh_number", mesh_number, "m^(-1)"],
+        ["epsilon", epsilon, "1"],
+        ["mesh_permeability", mesh_permeability, "m^2"],
+        ["mesh_effective_capilar_radius", mesh_effective_capilar_radius, "m"],
+        ["pipe_internal_diameter", pipe_internal_diameter, "m"],
+        ["pipe_internal_radius", pipe_internal_radius, "m"],
+        ["pipe_effective_length", pipe_effective_length, "m"],
+        ["radius_steam", radius_steam, "m"],
+        ["diameter_steam", diameter_steam, "m"],
+        ["area_liquid", area_liquid, "m^2"],
+        ["area_steam", area_steam, "m^2"],
+        ["perimeter_steam", perimeter_steam, "m"],
+        ["volume_liquid", volume_liquid, "m^3"],
+        ["volume_steam", volume_steam, "m^3"],
+        ["area_evaporator", area_evaporator, "m^2"],
+        ["area_evaporator", area_evaporator, "m^2"]
+    ]
 
     summary(csvFile, matrixExportToCSV)
 
