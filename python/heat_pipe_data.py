@@ -57,28 +57,37 @@ area_condenser = numpy.pi*pipe_external_diameter*length_condenser
 if pipe_length != (length_evaporator+length_adiabatic+length_condenser):
     raise ValueError("pipe length incompatible with evaporator+adiabatic+condenser lengths.")
 
+def summary(csvFile, matrix):
+    for i in range(len(matrix)):
+        if len(matrix[i]) != 3:
+            raise ValueError("Error trying to export {} file, data size do not agree. Matrix line {} != 3".format(filename, len(matrix[i])))
+
+    for i in range(len(matrix)):
+        csvFile.write("{},{:g},{}\n".format(matrix[i][0], matrix[i][1], matrix[i][2]))
+
 if __name__ == "__main__":
 
-    csvFile = open("calculated_geometric_parameters.csv","w")
+    filename = "calculated_geometric_parameters.csv"
+    csvFile = open(filename,"w")
+    matrixExportToCSV = [
+                ["mesh_number", mesh_number, "m^(-1)"],
+                ["epsilon", epsilon, "1"],
+                ["mesh_permeability", mesh_permeability, "m^2"],
+                ["mesh_effective_capilar_radius", mesh_effective_capilar_radius, "m"],
+                ["pipe_internal_diameter", pipe_internal_diameter, "m"],
+                ["pipe_internal_radius", pipe_internal_radius, "m"],
+                ["pipe_effective_length", pipe_effective_length, "m"],
+                ["radius_steam", radius_steam, "m"],
+                ["diameter_steam", diameter_steam, "m"],
+                ["area_liquid", area_liquid, "m^2"],
+                ["area_steam", area_steam, "m^2"],
+                ["perimeter_steam", perimeter_steam, "m"],
+                ["volume_liquid", volume_liquid, "m^3"],
+                ["volume_steam", volume_steam, "m^3"],
+                ["area_evaporator", area_evaporator, "m^2"],
+                ["area_evaporator", area_evaporator, "m^2"]
+            ]
 
-    def summary():
-        csvFile.write("{},{:g},{}\n".format("mesh_number", mesh_number, "m^(-1)"))
-        csvFile.write("{},{:g},{}\n".format("epsilon", epsilon, "1"))
-        csvFile.write("{},{:g},{}\n".format("mesh_permeability", mesh_permeability, "m^2"))
-        csvFile.write("{},{:g},{}\n".format("mesh_effective_capilar_radius", mesh_effective_capilar_radius, "m"))
-        csvFile.write("{},{:g},{}\n".format("pipe_internal_diameter", pipe_internal_diameter, "m"))
-        csvFile.write("{},{:g},{}\n".format("pipe_internal_radius", pipe_internal_radius, "m"))
-        csvFile.write("{},{:g},{}\n".format("pipe_effective_length", pipe_effective_length, "m"))
-        csvFile.write("{},{:g},{}\n".format("radius_steam", radius_steam, "m"))
-        csvFile.write("{},{:g},{}\n".format("diameter_steam", diameter_steam, "m"))
-        csvFile.write("{},{:g},{}\n".format("area_liquid", area_liquid, "m^2"))
-        csvFile.write("{},{:g},{}\n".format("area_steam", area_steam, "m^2"))
-        csvFile.write("{},{:g},{}\n".format("perimeter_steam", perimeter_steam, "m"))
-        csvFile.write("{},{:g},{}\n".format("volume_liquid", volume_liquid, "m^3"))
-        csvFile.write("{},{:g},{}\n".format("volume_steam", volume_steam, "m^3"))
-        csvFile.write("{},{:g},{}\n".format("area_evaporator", area_evaporator, "m^2"))
-        csvFile.write("{},{:g},{}\n".format("area_evaporator", area_evaporator, "m^2"))
-
-    summary()
+    summary(csvFile, matrixExportToCSV)
 
     csvFile.close()

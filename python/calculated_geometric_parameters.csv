@@ -12,3 +12,5 @@ area_steam,0.000312885,m^2
 perimeter_steam,0.0627043,m
 volume_liquid,3.67956e-06,m^3
 volume_steam,0.000156443,m^3
+area_evaporator,0.0138481,m^2
+area_evaporator,0.0138481,m^2
