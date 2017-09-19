@@ -4,7 +4,7 @@ from heat_pipe_data import *
 from CoolProp.CoolProp import PropsSI
 
 R = 8.3144621 # [J/(K mol)]
-minimal_temperature = -20 + 273.15
+minimal_temperature = 0 + 273.15
 maximum_temperature = 100 + 273.15
 temperature = numpy.arange(minimal_temperature, maximum_temperature, 5)
 
@@ -24,14 +24,14 @@ for i in numpy.arange(len(temperature)):
     friction_factor_liquid = viscosity_liquid / (mesh_permeability * area_liquid * enthalpy_evaporation * rho_liquid)
 
     # steam friction factor
-    correction_factor = 1
-    fanning_laminar_friction = 16
+    Re_axial_steam = 1
+    fanning_laminar_friction = 16/Re_axial_steam
     viscosity_steam = PropsSI("V", "T", temperature[i], "Q", 1, fluid)
     radius_hidraulic_steam = 2*radius_steam/2
     rho_steam = PropsSI("D", "T", temperature[i], "Q", 1, fluid)
-    friction_factor_steam = correction_factor * fanning_laminar_friction * viscosity_steam / (2 * radius_hidraulic_steam * area_steam * rho_steam * enthalpy_evaporation)
+    friction_factor_steam = Re_axial_steam * fanning_laminar_friction * viscosity_steam / (2 * radius_hidraulic_steam * area_steam * rho_steam * enthalpy_evaporation)
 
-    max_capilar_heat[i] = (maximum_capilar_pressure - rho_liquid * gravity * pipe_length * numpy.sin(pipe_inclination)) / (friction_factor_liquid - friction_factor_steam)
+    max_capilar_heat[i] = (maximum_capilar_pressure - rho_liquid * gravity * pipe_length * numpy.sin(pipe_inclination)) / (friction_factor_liquid + friction_factor_steam)
     #q_capf(i)=((pc_max(i)-(rho_l(i)*g*l*sind(psi)))/(f_l(i)+f_v(i)));%/(1000);%Q_capilar livro de Faghri, pag 227
 
 # sonic limit
@@ -98,7 +98,7 @@ for i in numpy.arange(len(temperature)):
     # q_v(i)=a_v*((((((2*r_v)^2)*hlv(i)*rho_v(i)*p0(i))/(64*nu_v(i)*lef))));
 
 # plot
-fig = plt.figure(1)
+fig = plt.figure(1, figsize=(10,10))
 ax = fig.add_subplot(1,1,1)
 temperature = temperature - 273.15
 ax.semilogy(temperature,max_capilar_heat,'-kx')
@@ -106,7 +106,7 @@ ax.semilogy(temperature,max_sonic_heat,'-k*')
 ax.semilogy(temperature,max_boiling_heat,'-ks')
 ax.semilogy(temperature,max_drag_heat,'-ko')
 ax.semilogy(temperature,max_viscous_heat,'-k^')
-ax.grid(True)
+ax.grid(True, which="both")
 ax.set_xlabel('Temperatura [C]')
 ax.set_ylabel('Q [W]')
 ax.legend(["Capilar", "Sonico","Ebulicao","Arrasto","Viscoso"])
