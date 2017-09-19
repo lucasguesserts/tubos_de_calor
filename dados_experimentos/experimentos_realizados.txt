@@ -1,0 +1,133 @@
+Experimento 01:
+	V = 8.6 V
+	I = 2.53 A
+	P = 21.75 W
+	excesso de fluido de trabalho
+	conveccao natural
+	partindo da temperatura ambiente
+
+Experimento 02:
+	V = 8.6 V
+	I = 2.53 A
+	P = 21.75 W
+	excesso de fluido de trabalho
+	conveccao forcada (velocidade media do ventilador)
+	velocidade do vento 5.3 m/s
+	partindo do estado anterior
+
+Experimento 03:
+	V = 12.16 V
+	I = 3.53 A
+	P = 42.9248 W
+	excesso de fluido de trabalho
+	conveccao forcada (velocidade media do ventilador)
+	velocidade do vento 5.3 m/s
+	partindo do estado anterior
+
+Experimento 04:
+	V = 12.16 V
+	I = 3.50 A
+	P = 42.56 W
+	excesso de fluido de trabalho
+	conveccao forcada (velocidade maxima do ventilador)
+	velocidade do vento 6.35 m/s
+	partindo do estado anterior
+
+Experimento 05:
+	V = 14.90 V
+	I = 4.25 A
+	P = 63.325 W
+	excesso de fluido de trabalho
+	conveccao forcada (velocidade maxima do ventilador)
+	velocidade do vento 6.35 m/s
+	partindo do estado anterior
+
+Experimento 06:
+	V = 14.90 V
+	I = 4.25 A
+	P = 63.325 W
+	excesso de fluido de trabalho
+	conveccao forcada (velocidade maxima do ventilador)
+	velocidade do vento 6.35 m/s
+	inclinado em 26.6 graus (evaporador para baixo)
+	partindo do estado anterior
+
+Experimento 07:
+	V = 14.90 V
+	I = 4.25 A
+	P = 63.325 W
+	excesso de fluido de trabalho
+	conveccao forcada (velocidade maxima do ventilador)
+	velocidade do vento 6.35 m/s
+	inclinado em -18 graus (evaporador para cima)
+	partindo do estado anterior
+	obs: no final, o tubo foi inclinado com o evaporador para baixo
+		e o aquecimento desligado. Isso foi feito porque a
+		temperatura maxima estava muito alta
+
+Experimento 08:
+	V = 16.92 V
+	I = 4.8 A
+	P = 81.216 W
+	excesso de fluido de trabalho
+	conveccao forcada (velocidade maxima do ventilador)
+	velocidade do vento 6.35 m/s
+	inclinado em 0 graus
+	partindo proximo da temperatura ambiente
+
+Experimento 09:
+	V = 8.6 V
+	I = 2.41 A
+	P = 20.726 W
+	8 ml fluido trabalho
+	conveccao forcada (velocidade maxima do ventilador)
+	velocidade do vento 6.35 m/s
+	inclinado em 0 graus
+	partindo da temperatura ambiente
+
+
+Experimento 10:
+	V = 12.16 V
+	I = 3.39 A
+	P = 42.714 W
+	8 ml fluido trabalho
+	conveccao forcada (velocidade maxima do ventilador)
+	velocidade do vento 6.35 m/s
+	inclinado em 0 graus
+	partindo do estado anterior
+	obs: Aos 870 s foram retirados 4 cm do isolamento da seção adiabática, 
+	pois a média das temperaturas já tinha ultrapassado o limite de operação.
+
+Experimento 11:
+	V = 14.85 V
+	I = 4.14 A
+	P = 61.479 W
+	8 ml fluido trabalho
+	conveccao forcada (velocidade maxima do ventilador)
+	velocidade do vento 6.35 m/s
+	inclinado em 0 graus
+	partindo do estado anterior
+	obs: aos 400 s inclinado em 18 graus.
+	defeito nos termopares 6 e T amb.
+
+Experimento 12:
+	V = 14.85 V
+	I = 4.14 A
+	P = 61.479 W
+	8 ml fluido trabalho
+	conveccao forcada (velocidade maxima do ventilador)
+	velocidade do vento 6.35 m/s
+	inclinado em 0 graus
+	partindo do estado anterior
+	obs: removida a segunda parte da seção adiabatica
+
+Experimento 13:
+	V = 16.90 V
+	I = 4.63 A
+	P = 78.462 W
+	8 ml fluido trabalho
+	conveccao forcada (velocidade maxima do ventilador)
+	velocidade do vento 6.35 m/s
+	inclinado em 12 graus
+	partindo do estado anterior
+	obs: inclinado até 20 graus.
