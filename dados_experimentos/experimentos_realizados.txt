@@ -131,3 +131,174 @@ Experimento 13:
 	inclinado em 12 graus
 	partindo do estado anterior
 	obs: inclinado até 20 graus.
+
+Experimento 14:
+	V = 8.6 V
+	I = 2.39 A
+	P = 20.554 W
+	8 ml fluido
+	conveccao natural
+	partindo da temperatura ambiente
+	inclinacao 90°
+
+
+Experimento 15:
+	V = 8.6 V
+	I = 2.39 A
+	P = 20.554 W
+	8 ml fluido
+	conveccao forcada
+	velocidade vento 6.35 m/s
+	partindo da condicao anterior
+	inclinacao 90°
+
+
+
+Experimento 16:
+	V = 12.15 V
+	I = 3.36 A
+	P = 40.824 W
+	8 ml fluido
+	conveccao forcada
+	velocidade vento 6.35 m/s
+	partindo da condicao anterior
+	inclinacao 90°
+
+
+Experimento 17:
+	V = 13.6 V
+	I = 3.76 A
+	P = 51.136 W
+	8 ml fluido
+	conveccao forcada
+	velocidade vento 6.35 m/s
+	partindo da condicao anterior
+	inclinacao 90°
+
+
+
+Experimento 18:
+	V = 14.85 V
+	I = 4.1 A
+	P = 59.45 W
+	8 ml fluido
+	conveccao forcada
+	velocidade vento 6.35 m/s
+	partindo da condicao anterior
+	inclinacao 90°
+
+
+Experimento 19:
+	V = 8.6 V
+	I = 2.39 A
+	P = 20.554 W
+	8 ml fluido
+	conveccao forcada
+	velocidade vento 6.35 m/s
+	partindo da T ambiente
+	inclinacao 60°
+
+
+Experimento 20:
+	V = 12.15 V
+	I = 3.37 A
+	P = 40.945 W
+	8 ml fluido
+	conveccao forcada
+	velocidade vento 6.35 m/s
+	partindo da T ambiente
+	inclinacao 60°
+	obs: comportamento curioso aos 190 s e 880 s.
+	aos 1100 s, queda acentuada da temperatura no evaporador.
+
+Experimento 21:
+	V = 8.6 V
+	I = 2.39 A
+	P = 20.554 W
+	8 ml fluido
+	conveccao forcada
+	velocidade vento 6.35 m/s
+	partindo próximo da T ambiente
+	inclinacao 30°
+
+Experimento 22:
+	V = 10.53 V
+	I = 2.91 A
+	P = 30.6423 W
+	8 ml fluido
+	conveccao forcada
+	velocidade vento 6.35 m/s
+	partindo da condição anterior
+	inclinacao 30°
+
+Experimento 23:
+	V = 12.16 V
+	I = 3.36 A
+	P = 40.858 W
+	8 ml fluido
+	conveccao forcada
+	velocidade vento 6.35 m/s
+	partindo da condição anterior
+	inclinacao 30°
+
+Teste 01:
+	V = 0 V
+	I = 0 A
+	P = 0 W
+	agua
+	conveccao natural
+	partindo da temperatura ambiente
+	inclinacao 90°
+
+Experimento 24:
+	Varias potencias
+	V = 8.5 V ; I = 2.36 A ; P = 20,06 W
+	V = 10.42 V ; I = 2.89 A ; P = 30.1138 W
+	V = 12.76 V ; I = 3.53 A ; P = 45.0428 W
+	V = 14.74 V ; I = 4.08 A ; P = 59.9918 W
+	V = 15.92 V ; I = 4.39 A ; P = 69.8888 W
+	V =  V ; I =  A ; P =  W
+	agua
+	conveccao forcada
+	velocidade vento 6.8 -- 8.5 -- 6.5m/s
+	partindo da temperatura ambiente
+
+Experimento 25:
+	Varias potencias
+	V = 8.5 V ; I = 2.36 A ; P = 20,06 W
+	V = 10.43 V ; I = 2.89 A ; P = 30.1427 W
+	V = 12.01 V ; I = 3.33 A ; P = 39,9933 W
+	V = 13.42 V ; I = 3.72 A ; P = 49.9224 W
+	V = 14.72 V ; I = 4.07 A ; P = 59.91 W
+	agua
+	conveccao forcada
+	velocidade vento 7.5 -- 8.6 -- 8.1m/s
+	partindo morno
+	inclinacao 60°
+
+Experimento 26:
+	Varias potencias
+	V = 8.6 V ; I = 2.38 A ; P = 20.468 W
+	V = 10.43 V ; I = 2.89 A ; P = 30.1427 W
+	V = 12.29 V ; I = 3.40 A ; P = 41.786 W
+	V = 13.42 V ; I = 3.72 A ; P = 49.9224 W
+	V = 15.00 V ; I = 4.14 A ; P = 62.1000 W
+	agua
+	conveccao forcada
+	velocidade vento 7.5 -- 9.0 -- 6.5 m/s
+	partindo morno
+	inclinacao 30°
+
+Experimento 27:
+	Varias potencias
+	V = 8.6 V ; I = 2.38 A ; P = 20.468 W
+	V = 10.43 V ; I = 2.89 A ; P = 30.1427 W
+	V = 12.29 V ; I = 3.40 A ; P = 41.786 W
+	V = 13.70 V ; I = 3.78 A ; P = 51.786 W
+	V = 15.00 V ; I = 4.13 A ; P = 61.9500 W
+	V = 14.14 V ; I = 3.9 A ; P = 55.146 W
+	agua
+	conveccao forcada
+	velocidade vento 9.0 -- 8.7 -- 6.0 m/s
+	partindo morno
+	inclinacao 0°
