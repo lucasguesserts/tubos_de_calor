@@ -302,3 +302,51 @@ Experimento 27:
 	velocidade vento 9.0 -- 8.7 -- 6.0 m/s
 	partindo morno
 	inclinacao 0°
+	
+Experimento 28:
+	Varias potencias
+	V = 13.70 V ; I = 3.78 A ; P = 51.786 W
+	V = 14.9 V ; I = 4.11 A ; P = 61.239 W
+	v = 15.5 V ; I = 4.27 A ; P = 66,185 W
+	V = 15.95 V ; I = 4.39 A ; P = 70.021 W
+	agua
+	conveccao forcada
+	velocidade vento 9.0 -- 8.7 -- 6.0 m/s
+	partindo de T ambiente
+	inclinacao 90º
+	5 cm de adiabatico
+
+Experimento 29:
+	Varias potencias
+	V = 13.70 V ; I = 3.78 A ; P = 51.786 W
+	agua
+	conveccao forcada
+	velocidade vento 9.0 -- 8.7 -- 6.0 m/s
+	partindo proximo de T ambiente
+	inclinacao 0°
+	5 cm de adiabatico
+
+Experimento 30:
+	Varias potencias
+	V = 8.6 V ; I = 2.38 A ; P = 20.468 W
+	V = 12.29 V ; I = 3.38 A ; P = 41.5402 W
+	V = 15.00 V ; I = 4.11 A ; P = 61.6500 W
+	V = 16.99 V ; I = 4.63 A ; P = 79 W
+	agua, 4 ml
+	conveccao forcada
+	velocidade vento 9.2 -- 10.0 -- 8.8 m/s
+	partindo proximo de T ambiente
+	inclinacao 90°
+	5 cm de adiabatico
+
+Experimento 31:
+	Varias potencias
+	V = 8.6 V ; I = 2.38 A ; P = 20.468 W
+	V = 12.29 V ; I = 3.38 A ; P = 41.4173 W
+	agua, 4 ml
+	conveccao forcada
+	velocidade vento 8.4 m/s
+	partindo proximo de T ambiente
+	inclinacao 0°
+	5 cm de adiabatico
+
