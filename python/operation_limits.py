@@ -125,12 +125,12 @@ fig = plt.figure(0, figsize=(fig_size,fig_size))
 text_title = r"Limites de opera\c c\~ao em fun\c c\~ao da\\temperatura de opera\c c\~ao do tubo de calor\\Fluido: {:s}".format(fluid)
 figure_name = r"operation_limits.png"
 ax = fig.add_subplot(1,1,1)
-temperature = temperature - 273.15
-ax.semilogy(temperature,max_capilar_heat,'-kx')
-ax.semilogy(temperature,max_sonic_heat,'-k*')
-ax.semilogy(temperature,max_boiling_heat,'-ks')
-ax.semilogy(temperature,max_drag_heat,'-ko')
-ax.semilogy(temperature,max_viscous_heat,'-k^')
+to_plot_temperature = temperature - 273.15
+ax.semilogy(to_plot_temperature,max_capilar_heat,'-kx')
+ax.semilogy(to_plot_temperature,max_sonic_heat,'-k*')
+ax.semilogy(to_plot_temperature,max_boiling_heat,'-ks')
+ax.semilogy(to_plot_temperature,max_drag_heat,'-ko')
+ax.semilogy(to_plot_temperature,max_viscous_heat,'-k^')
 ax.grid(True, which="both")
 ax.set_title(text_title, multialignment="center", fontsize=figFontSize)
 ax.set_xlabel('Temperatura [$C$]', fontsize=figFontSize)
@@ -142,13 +142,15 @@ plt.close(fig)
 
 
 # capilar limit
+max_capilar_heat = capilarLimit()
+
 fig_size = 8
 figFontSize = 14
 fig = plt.figure(0, figsize=(fig_size,fig_size))
 text_title = r"Limites capilar em fun\c c\~ao da\\temperatura de opera\c c\~ao do tubo de calor\\Fluido: {:s}".format(fluid)
 figure_name = r"capilar_limit.png"
 ax = fig.add_subplot(1,1,1)
-ax.plot(temperature,max_capilar_heat,'-kx')
+ax.plot(to_plot_temperature,max_capilar_heat,'-kx')
 ax.grid(True, which="both")
 ax.set_title(text_title, multialignment="center", fontsize=figFontSize)
 ax.set_xlabel('Temperatura [$C$]', fontsize=figFontSize)
